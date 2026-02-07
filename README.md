@@ -1,0 +1,1 @@
+**WebThon** is a hybrid programming language combining Python, HTML5, and C, allowing developers to create full programs with frontend and backend logic. It supports `<print>`, `<css>`, `<js>` for web output and `<python>` and `<c>` for backend code, automatically generating HTML, running Python in the terminal, and compiling C. Still in development. GNU GPLv3.
