@@ -1,0 +1,44 @@
+<webthon>
+    <head>
+        <title>Webthon  website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Welcome to Webthon!</h1>
+        <p>This website is made with the webthon programming language.</p>
+        <p>Webthon is a simple and easy-to-learn language for creating websites.</p>
+        <p>With Webthon, you can create beautiful and responsive apps in no time!</p>
+        <button onclick="alert('Taking you to tutorials')">tutorials</button>
+        <python>
+        import socket
+
+def main():
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind(('localhost', 8080))
+    server_socket.listen(5)
+    print("Server turning on at http://localhost:8080 ...")
+
+    html_file_path = "/home/trenton/Webthon/Webthon Programs/webthon.html"
+
+    # Read HTML once
+    with open(html_file_path, "r") as f:
+        html_content = f.read()
+
+    try:
+        while True:
+            client_socket, addr = server_socket.accept()
+            print(f"Connection from {addr}")
+
+            response = f"HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n{html_content}"
+            client_socket.sendall(response.encode('utf-8'))
+            client_socket.close()
+    except KeyboardInterrupt:
+        print("Server shutting down...")
+    finally:
+        server_socket.close()
+
+main()
+
+        </python>
+    </body>
+</webthon>
